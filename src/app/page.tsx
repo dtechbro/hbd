@@ -25,7 +25,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-bold text-white">
             Hey {`Ni'mah`}
           </h1>
-          <p className="text-lg md:text-2xl text-white">Some paragraph here</p>
+          <p className="text-lg md:text-2xl text-white">I know its a special moment</p>
         </div>
       )}
 
