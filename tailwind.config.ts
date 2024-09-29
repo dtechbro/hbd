@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        primary: ['Acme', 'sans-serif'],
+        // primary: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],
