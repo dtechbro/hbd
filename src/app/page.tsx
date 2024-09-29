@@ -1,15 +1,15 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import BalloonFlood from "./components/Balloon";
 import ImageCarousel from "./components/pictures";
-import Music from "@/assets/music.mp2"
 
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
 
-  
+  // Create a ref to hold the audio element
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   // Automatically change sections every 5 seconds (adjustable)
   useEffect(() => {
@@ -21,8 +21,21 @@ export default function Home() {
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play(); // Play the audio when the component mounts
+    }
+  }, []);
+
+
   return (
     <div className="w-full h-screen overflow-hidden relative bg-pink-200">
+      {/* Background music */}
+      <audio ref={audioRef} loop>
+        <source src="/music.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+
       {/* 1st Display */}
       {currentSection === 0 && (
         <div className="flex flex-col items-center justify-center h-full">
