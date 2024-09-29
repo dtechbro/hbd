@@ -30,7 +30,7 @@ const generateRandomBalloons = (numBalloons: number) => {
 };
 
 const BalloonFlood = () => {
-  const [balloons, setBalloons] = useState<Balloon[]>(
+  const [balloons] = useState<Balloon[]>(
     generateRandomBalloons(80)
   ); // Increase to 150 balloons for better spread
 
